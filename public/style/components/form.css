@@ -1,0 +1,136 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+    /* padding-top: 40px; */
+}
+
+.form h3{
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 40px;
+}
+
+.form fieldset{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+    width: 30%;
+}
+
+.fieldset input{
+    width: 100%;
+    padding: 15px 20px;
+    outline: none;
+    border: 1px solid rgba(31, 31, 31, .1);
+    border-radius: 4px;
+    font-size: 15px;
+    box-sizing: border-box;
+}
+
+/* .form fieldset:nth-child(3){
+    padding: 15px 0;
+    border: none;
+} */
+
+.fieldset button{
+    width: 100%;
+    padding: 15px 20px;
+    border: none;
+    background-color: #00A2DC;
+    color: #fff;
+    font-size: 16px;
+    font-weight: 600;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.new-form fieldset{
+    width: 50%;
+}
+
+.select-categ{
+    padding: 13px;
+}
+
+/* .table {
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+	width: 100%;
+}
+.table th {
+	font-weight: bold;
+	padding: 5px 10px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+	text-align: center;
+	vertical-align: middle;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 5px 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.table tbody tr:nth-child(3n+1){
+	background: #f2fff5;
+}
+
+.table tbody tr:nth-child(3n+2){
+	background: #ffeaea;
+}
+
+.table tbody tr:nth-child(3n+3){
+	background: #eeecff;
+} */
+
+.table {
+	border: 1px solid #dddddd;
+	border-collapse: collapse;
+	width: 100%;
+}
+.table th {
+	font-weight: bold;
+	padding: 10px;
+	background: #efefef;
+	border: 1px solid #dddddd;
+	text-align: center;
+	vertical-align: middle;
+}
+.table td {
+	border: 1px solid #dddddd;
+	padding: 10px;
+	text-align: center;
+	vertical-align: middle;
+}
+
+/* Нечетные строки */
+.table tbody tr:nth-child(odd){
+	background: #fff;
+}
+
+/* Четные строки */
+.table tbody tr:nth-child(even){
+	background: #F7F7F7;
+}
+.table tbody i{
+    color: #1E3050;
+}
+
+.td-stud span:first-child{
+    width: 20%;
+    height: 20%;
+    margin-right: 15px;
+}
+.td-stud-item img{
+    width: 100%;
+    height: 100%;
+    border-radius: 100%;
+}
+
+.td-stud{
+    display: flex;
+    align-items: center;
+}

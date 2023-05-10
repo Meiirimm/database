@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/header.ejs')%>
+    <div class="container">
+        <form action="/api/stud/edit" method="POST" class="form" enctype="multipart/form-data">
+            <h3>Редактировать студента</h3>
+            <fieldset>
+                <input type="hidden" value="<%=stud._id%>" name="id">
+            </fieldset>
+            <fieldset class="fieldset">
+                <input type="file" name="image">
+            </fieldset>
+            <fieldset class="fieldset">
+                <input type="text" value="<%=stud.full_name%>"  placeholder="Введите полное имя"  name="full_name">
+            </fieldset>
+            <fieldset class="fieldset">
+                <input type="email" value="<%=stud.email%>" placeholder="Введите email" name="email">
+            </fieldset>
+            <fieldset class="fieldset">
+                <select name="course" id="">
+                    <%
+                        course.forEach(course => {
+                            if(course.id == stud.course){            
+                    %>
+                                <option value="<%=course._id%>" selected><%=course.name%></option>
+                    <%
+                            }else{
+                    %>
+                                <option value="<%=course._id%>"><%=course.name%></option>
+                    <%
+                            }
+                        })
+                    %>
+                </select>
+            </fieldset>
+            <fieldset class="fieldset">
+                <select name="proff" id="">
+                    <%
+                        proff.forEach(proff => {
+                            if(proff.id == stud.proff){            
+                    %>
+                                <option value="<%=proff._id%>" selected><%=proff.name%></option>
+                    <%
+                            }else{
+                    %>
+                                <option value="<%=proff._id%>"><%=proff.name%></option>
+                    <%
+                            }
+                        })
+                    %>
+                </select>
+            </fieldset>
+            <fieldset class="fieldset">
+                <input type="text" value="<%=stud.address%>" placeholder="Введите адресс" name="address">
+            </fieldset>
+            <fieldset class="fieldset"><button type="submit">Сохранить</button></fieldset>
+        </form>
+
+    </div>
+    <%-include('partials/scripts.ejs')%>
+</body>
+</html>

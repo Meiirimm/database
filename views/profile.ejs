@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/header.ejs')%>
+    <div class="container">
+        <div class="main">
+            <div class="main-item prof-main">
+                <div class="profile-main-item">
+                    <h1>Личная информация</h1>
+                    <a href="/">Редактировать</a>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="category profile-card">
+            <div class="profile-img proff-img">
+                <img src="<%= stud.image %> " alt="">
+            </div>
+            <div class="profile-body">
+                    <h1><%=stud.full_name%></h1>
+                    <p><%=stud.email%></p>
+                    <%
+                        if(loginUser.id == user.id){
+                    %>
+                        <a href="">Редактировать</a>
+                        <a href="/api/signout" class="logout-btn">Выход</a>
+                    <%
+                        }
+                    %>
+            </div>
+        </div>
+    </div>
+    <%-include('partials/scripts.ejs')%>
+</body>
+</html>

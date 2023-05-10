@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/header.ejs')%>    
+    <div class="container">
+        <div class="main">
+            <div class="main-item prof-main">
+                <div class="profile-main-item admin-tit">
+                    <h1>Студенты</h1>
+                    <a href="/new">Добавить студента</a>
+                </div> 
+            </div> 
+            <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Stud</th>
+                            <!-- <th>ID</th> -->
+                            <th>Course</th>
+                            <th>Proff</th>
+                            <th>Email</th>
+                            <th>Edit/Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <%
+                            studs.forEach(stud => {
+                        %>
+                            <tr>
+                                <td class="td-stud">
+                                    <span class="td-stud-item"><img src="<%= stud.image %> " alt=""></span>
+                                    <span class="td-stud-item"><a href="/profile/<%=stud._id%>"><%= stud.full_name %></a></span>
+                                    
+                                </td>
+                                <!-- <td><%= stud._id %> </td> -->
+                                <td><%= stud.course.name%> </td>
+                                <td><%= stud.proff.name%> </td>
+                                <td><%= stud.email %> </td>
+                                <td>
+                                    <div><a href="/edit/<%=stud._id%>"><i class="fa-regular fa-pen-to-square"></i></a></div>
+                                    <div><a href="" onclick="deleteStud('<%=stud._id%>' , '<%=user._id%>')"><i class="fa-regular fa-trash-can"></i></i></a></div>
+                                </td>
+                            </tr>
+                        <%
+                            })
+                        %>
+                    </tbody>
+                </table>
+            </div>           
+        </div>
+
+        <div class="category profile-card">
+            <div class="profile-img">
+                <img src="/images/avatar.svg" alt="">
+            </div>
+            <div class="profile-body">
+                    <h1><%=user.full_name%></h1>
+                    <%
+                        if(loginUser.id == user.id){
+                    %>
+                        <a href="">Редактировать</a>
+                        <a href="/api/signout" class="logout-btn">Выход</a>
+                    <%
+                        }
+                    %>
+            </div>
+        </div>
+    </div>
+    <%-include('partials/scripts.ejs')%>
+</body>
+</html>

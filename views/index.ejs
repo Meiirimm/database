@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%-include('partials/head.ejs')%>
+    <title>Document</title>
+</head>
+<body>
+    <%-include('partials/header.ejs')%>
+    <div class="container">
+        <div class="main">
+            <div class="main-item">
+                <h1>База данных университета</h1>
+                <img src="/images/main.svg" alt="">
+            </div>                   
+        </div>
+
+        
+
+
+        <div class="category">
+            <div class="category-tit">
+                <h1>Курсы</h1>
+            </div>
+            <% courses.forEach(course => { %>
+            <div class="category-item">
+                <a href="/<%=course.key%>"><%=course.name%></a>
+            </div>
+            <% })%>
+        </div>
+    </div>
+    <%-include('partials/scripts.ejs')%>
+</body>
+</html>
